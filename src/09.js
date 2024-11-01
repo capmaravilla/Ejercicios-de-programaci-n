@@ -11,25 +11,25 @@
 // "ABBA" -> 2 # 'A' and 'B' each occur twice 00
 
 function duplicateCount(text) {
-	let arr = text.toLowerCase().split('').sort();
-	let rep = [];
+	const arr = text.toLowerCase().split('').sort();
+	const rep = [];
 	while (arr.length > 0) {
-		let a = arr.shift();
+		const a = arr.shift();
 		arr.includes(a) && !rep.includes(a) ? rep.push(a) : 0;
 	}
 	return rep.length;
 }
 
-function duplicateCount2(text) {
-	return (
-		text
-			.toLowerCase()
-			.split('')
-			.sort()
-			.join('')
-			.match(/([^])\1+/g) || []
-	).length;
-}
+// function duplicateCount2(text) {
+// 	return (
+// 		text
+// 			.toLowerCase()
+// 			.split('')
+// 			.sort()
+// 			.join('')
+// 			.match(/([^])\1+/g) || []
+// 	).length;
+// }
 
 console.log(duplicateCount('aabbccccccch'));
 console.log(duplicateCount2('aabbccccccch'));
@@ -42,37 +42,35 @@ console.log(duplicateCount2('aabbccccccch'));
 // "(( @"     =>  "))(("
 
 function duplicateEncode(word) {
-	let arr = word.toLowerCase().split('');
+	const arr = word.toLowerCase().split('');
 	console.log(arr);
-	let rep = [];
+	const rep = [];
 	while (arr.length > 0) {
-		let a = arr.shift();
+		const a = arr.shift();
 		arr.includes(a) && !rep.includes(a) ? rep.push(a) : 0;
 	}
 
 	let result = '';
-	for (let el of word) {
+	for (const el of word) {
 		result += !rep.includes(el.toLowerCase()) ? '(' : ')';
 	}
 
 	return result;
 }
 
-function duplicateEncode(word) {
+function duplicateEncode2(word) {
 	return word
 		.toLowerCase()
 		.split('')
-		.map(function (a, i, w) {
-			return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')';
-		})
+		.map((a, i, w) => (w.indexOf(a) === w.lastIndexOf(a) ? '(' : ')'))
 		.join('');
 }
 
-function duplicateEncode(word) {
-	var unique = '';
-	word = word.toLowerCase();
-	for (var i = 0; i < word.length; i++) {
-		if (word.lastIndexOf(word[i]) === word.indexOf(word[i])) {
+function duplicateEncode3(word) {
+	let unique = '';
+	const word2 = word.toLowerCase();
+	for (let i = 0; i < word.length; i++) {
+		if (word2.lastIndexOf(word2[i]) === word2.indexOf(word[i])) {
 			unique += '(';
 		} else {
 			unique += ')';
@@ -102,7 +100,7 @@ function getSum(a, b) {
 	return arr.reduce((acc, el) => acc + el);
 }
 
-function GetSum2(a, b) {
+function GetSum(a, b) {
 	return ((Math.abs(a - b) + 1) * (a + b)) / 2;
 }
 
