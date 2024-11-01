@@ -12,7 +12,8 @@
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"formatWithErrors": false
+		"formatWithErrors": false,
+		"lineWidth": 80
 	},
 	"organizeImports": {
 		"enabled": true
@@ -33,6 +34,14 @@
 			"quoteProperties": "asNeeded",
 			"semicolons": "always",
 			"trailingCommas": "all",
+			"indentStyle": "tab",
+			"quoteStyle": "single",
+			"lineWidth": 80
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
 			"indentStyle": "tab",
 			"quoteStyle": "single",
 			"lineWidth": 80
